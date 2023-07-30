@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"/>
+    <title>JavaScript Calculator</title>
+</head>
+<body>
+    <header>
+        <h1>JavaScript Calculator</h1>
+        <p>This is a calculator I made with completely vanilla HTML, CSS and JavaScript.</p>
+    </header>
+    <div id="calculator-container">
+        <svg id="calculator-graphic" width="250" height="425">
+            <!-- Calculator Body -->
+            <rect width="250" height="425" style="fill:rgb(100,100,100);stroke:rgb(50,50,50);stroke-width:10px;" />
+
+            <!-- Calculator Screen -->
+            <rect x="25" y="20" width="200" height="100" style="fill:rgb(100,150,100);stroke:rgb(200,200,200);stroke-width:5px;" />
+            <text id="calc-screen-bot-text" x="30" y="100" fill="rgb(150,200,150)">0</text>
+
+                                        <!----- Calculator Buttons ------>
+            <!-- Button Row 1 -->
+
+            <!-- Clear Button -->
+            <rect id="clear-button" x="20" y="135" width="45" height="45" style="fill:rgb(215,215,215);stroke:rgb(150,150,150);stroke-width:1px;" />
+            <text x="30" y="163" fill="#000000" font-size="16" font-family="Verdana">AC</text>
+            <!-- Negate Button -->
+            <rect id="negate-button" x="75" y="135" width="45" height="45" style="fill:rgb(215,215,215);stroke:rgb(150,150,150);stroke-width:1px;" />
+            <text x="85" y="155" fill="#000000" font-size="14" font-family="Verdana">+</text>
+            <text x="94" y="164" fill="#000000" font-size="20" font-family="Verdana">/</text>
+            <text x="102" y="166" fill="#000000" font-size="14" font-family="Verdana">-</text>
+            <!-- Percent Button -->
+            <rect id="percentage-button" x="130" y="135" width="45" height="45" style="fill:rgb(215,215,215);stroke:rgb(150,150,150);stroke-width:1px;" />
+            <text x="140" y="165" fill="#000000" font-size="20" font-family="Verdana">%</text>
+            <!-- Divide Button -->
+            <rect id="divide-button" x="185" y="135" width="45" height="45" style="fill:rgb(233, 118, 10);stroke:rgb(150,150,150);stroke-width:1px;" />
+            <text x="198" y="164" fill="#000000" font-size="22" font-family="Verdana">&#247;</text>
+
+            <!-- Button Row 2 -->
+
+            <!-- Number 7 Button -->
+            <rect id="number-seven-button" x="20" y="190" width="45" height="45" style="fill:rgb(70, 70, 70);stroke:rgb(110,110,110);stroke-width:1px;" />
+            <text x="37" y="218" fill="#ffffff" font-size="16" font-family="Verdana">7</text>
+            <!-- Number 8 Button -->
+            <rect id="number-eight-button" x="75" y="190" width="45" height="45" style="fill:rgb(70, 70, 70);stroke:rgb(110,110,110);stroke-width:1px;" />
+            <text x="92" y="218" fill="#ffffff" font-size="16" font-family="Verdana">8</text>
+            <!-- Number 9 Button -->
+            <rect id="number-nine-button" x="130" y="190" width="45" height="45" style="fill:rgb(70, 70, 70);stroke:rgb(110,110,110);stroke-width:1px;" />
+            <text x="147" y="218" fill="#ffffff" font-size="16" font-family="Verdana">9</text>
+            <!-- Multiply Button -->
+            <rect id="multiply-button" x="185" y="190" width="45" height="45" style="fill:rgb(233, 118, 10);stroke:rgb(150,150,150);stroke-width:1px;" />
+            <text x="202" y="218" fill="#000000" font-size="16" font-family="Verdana">X</text>
+            
+            <!-- Button Row 3 -->
+
+            <!-- Number 4 Button -->
+            <rect id="number-four-button" x="20" y="245" width="45" height="45" style="fill:rgb(70, 70, 70);stroke:rgb(110,110,110);stroke-width:1px;" />
+            <text x="37" y="273" fill="#ffffff" font-size="16" font-family="Verdana">4</text>
+            <!-- Number 5 Button -->
+            <rect id="number-five-button" x="75" y="245" width="45" height="45" style="fill:rgb(70, 70, 70);stroke:rgb(110,110,110);stroke-width:1px;" />
+            <text x="92" y="273" fill="#ffffff" font-size="16" font-family="Verdana">5</text>
+            <!-- Number 6 Button -->
+            <rect id="number-six-button" x="130" y="245" width="45" height="45" style="fill:rgb(70, 70, 70);stroke:rgb(110,110,110);stroke-width:1px;" />
+            <text x="147" y="273" fill="#ffffff" font-size="16" font-family="Verdana">6</text>
+            <!-- Subtract Button -->
+            <rect id="subtract-button" x="185" y="245" width="45" height="45" style="fill:rgb(233, 118, 10);stroke:rgb(150,150,150);stroke-width:1px;" />
+            <text x="202" y="266" fill="#000000" font-weight="bold" font-size="16" font-family="Verdana">_</text>
+            
+            <!-- Button Row 4 -->
+
+            <!-- Number 1 Button -->
+            <rect id="number-one-button" x="20" y="300" width="45" height="45" style="fill:rgb(70, 70, 70);stroke:rgb(110,110,110);stroke-width:1px;" />
+            <text x="37" y="328" fill="#ffffff" font-size="16" font-family="Verdana">1</text>
+            <!-- Number 2 Button -->
+            <rect id="number-two-button" x="75" y="300" width="45" height="45" style="fill:rgb(70, 70, 70);stroke:rgb(110,110,110);stroke-width:1px;" />
+            <text x="92" y="328" fill="#ffffff" font-size="16" font-family="Verdana">2</text>
+            <!-- Number 3 Button -->
+            <rect id="number-three-button" x="130" y="300" width="45" height="45" style="fill:rgb(70, 70, 70);stroke:rgb(110,110,110);stroke-width:1px;" />
+            <text x="147" y="328" fill="#ffffff" font-size="16" font-family="Verdana">3</text>
+            <!-- Addition Button -->
+            <rect id="addition-button" x="185" y="300" width="45" height="45" style="fill:rgb(233, 118, 10);stroke:rgb(150,150,150);stroke-width:1px;" />
+            <text x="200" y="328" fill="#000000" font-weight="bold" font-size="16" font-family="Verdana">+</text>
+
+            <!-- Button Row 5 -->
+
+            <!-- Number 0 Button -->
+            <rect id="number-zero-button" x="20" y="355" width="100" height="45" style="fill:rgb(70, 70, 70);stroke:rgb(110,110,110);stroke-width:1px;" />
+            <text x="37" y="383" fill="#ffffff" font-size="16" font-family="Verdana">0</text>
+            <!-- Decimal Button -->
+            <rect id="decimal-button" x="130" y="355" width="45" height="45" style="fill:rgb(70, 70, 70);stroke:rgb(110,110,110);stroke-width:1px;" />
+            <text x="149" y="383" fill="#ffffff" font-size="16" font-family="Verdana">.</text>
+            <!-- Equals Button -->
+            <rect id="equals-button" x="185" y="355" width="45" height="45" style="fill:rgb(233, 118, 10);stroke:rgb(150,150,150);stroke-width:1px;" />
+            <text x="200" y="383" fill="#000000" font-weight="bold" font-size="16" font-family="Verdana">=</text>
+        </svg>
+    </div>
+</body>
+<script src="calculator.js"></script>
+</html>
